@@ -86,6 +86,7 @@
                             <option value="Active">Aktif</option>
                             <option value="Deactive">Tidak Aktif</option>
                             <option value="Out">Keluar</option>
+                            <option value="Cuti">Cuti</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -134,6 +135,7 @@
                             <option value="Active">Aktif</option>
                             <option value="Deactive">Tidak Aktif</option>
                             <option value="Out">Keluar</option>
+                            <option value="Out">Cuti</option>
                         </select>
                     </div>
                     <div class="form-group">

@@ -2,7 +2,6 @@
 
 @section('employeedetail')
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +35,8 @@
         }
 
         .table-title .btn-group {
-            float: right;
+            display: flex;
+            align-items: center;
         }
 
         .table-title .btn {
@@ -47,6 +47,14 @@
             font-size: 95%;
             outline: none !important;
             height: 30px;
+            margin-right: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .table-title .btn:last-child {
+            margin-right: 0;
         }
 
         .table-title {
@@ -64,7 +72,6 @@
             margin: 2px 0 0;
             font-size: 24px;
             color: #fff;
-            /* Tambahkan baris ini untuk mengubah warna tulisan menjadi putih */
         }
 
         table.table {
@@ -128,6 +135,9 @@
                                 <label class="btn btn-danger">
                                     <input type="radio" name="status" value="out"> Out
                                 </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="status" value="cuti"> Cuti
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -156,7 +166,6 @@
         $(document).ready(function() {
             fetchEmployees();
 
-            // Ambil semua pegawai
             function fetchEmployees() {
                 axios.get('/api/employees')
                     .then(response => {
@@ -182,7 +191,6 @@
                     });
             }
 
-            // Fungsi untuk mendapatkan kelas badge berdasarkan status
             function getBadgeClass(status) {
                 switch (status.toLowerCase()) {
                     case 'active':
@@ -191,6 +199,8 @@
                         return 'warning';
                     case 'out':
                         return 'danger';
+                    case 'cuti':
+                        return 'primary';
                     default:
                         return 'secondary';
                 }

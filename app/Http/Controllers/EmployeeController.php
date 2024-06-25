@@ -24,7 +24,7 @@ class EmployeeController extends Controller
             'Address'       => 'required|string|max:255',
             'Phone_Number'  => 'required|string|max:255',
             'Position'      => 'required|string|max:255',
-            'Status'        => 'required|in:Active,Deactive,Out',
+            'Status'        => 'required|in:Active,Deactive,Out,Cuti',
             'City'          => 'required|string|max:255',
             'Country'       => 'required|string|max:255',
         ]);
@@ -53,7 +53,7 @@ class EmployeeController extends Controller
             'Address'       => 'sometimes|string|max:255',
             'Phone_Number'  => 'sometimes|string|max:255',
             'Position'      => 'sometimes|string|max:255',
-            'Status'        => 'sometimes|in:Active,Deactive,Out',
+            'Status'        => 'sometimes|in:Active,Deactive,Out,Cuti',
             'City'          => 'sometimes|string|max:255',
             'Country'       => 'sometimes|string|max:255',
         ]);

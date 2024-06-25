@@ -65,6 +65,27 @@
             </div>
         </div>
     </div>
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        <div class="card">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <p class="text-sm mb-0 text-capitalize font-weight-bold">Pegawai Cuti</p>
+                            <h5 class="font-weight-bolder mb-0" id="cuti-employees">
+                                Loading...
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-4 text-end">
+                        <div class="icon icon-shape bg-gradient-danger shadow text-center border-radius-md"> <!-- Ubah dari bg-gradient-success -->
+                            <i class="fa-solid fa-user-xmark fa-xl opacity-10" style="color: #ffffff;" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-xl-3 col-sm-6">
         <div class="card">
             <div class="card-body p-3">
@@ -138,11 +159,13 @@
                     const totalEmployees = employees.length;
                     const activeEmployees = employees.filter(emp => emp.Status.toLowerCase() === 'active').length;
                     const deactiveEmployees = employees.filter(emp => emp.Status.toLowerCase() === 'deactive').length;
+                    const cutiEmployees = employees.filter(emp => emp.Status.toLowerCase() === 'cuti').length;
                     const outEmployees = employees.filter(emp => emp.Status.toLowerCase() === 'out').length;
 
                     document.getElementById('total-employees').textContent = totalEmployees;
                     document.getElementById('active-employees').textContent = activeEmployees;
                     document.getElementById('deactive-employees').textContent = deactiveEmployees;
+                    document.getElementById('cuti-employees').textContent = cutiEmployees;
                     document.getElementById('out-employees').textContent = outEmployees;
                 })
                 .catch(error => {
@@ -150,6 +173,7 @@
                     document.getElementById('total-employees').textContent = 'Error';
                     document.getElementById('active-employees').textContent = 'Error';
                     document.getElementById('deactive-employees').textContent = 'Error';
+                    document.getElementById('cuti-employees').textContent = 'Error';
                     document.getElementById('out-employees').textContent = 'Error';
                 });
         }

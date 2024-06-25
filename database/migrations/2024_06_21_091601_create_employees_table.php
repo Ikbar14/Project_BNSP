@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Address');
             $table->string('Phone_Number');
             $table->string('Position');
-            $table->enum('Status', ['Active', 'Deactive', 'Out']);
+            $table->enum('Status', ['Active', 'Deactive', 'Out', 'Cuti']);
             $table->string('City');
             $table->string('Country');
             $table->timestamps();
